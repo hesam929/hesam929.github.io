@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hesam Studio</title>
+<meta name="description" content="해삼 스튜디오 — 깊은 바다에서 건져 올린 게임을 만듭니다. Hesam Studio is an indie game studio making ocean-inspired mobile games.">
+<style>
+  :root {
+    --bg: #F2F7F7;          /* sea foam */
+    --surface: #FFFFFF;
+    --ink: #0E2A33;          /* deep-sea ink */
+    --ink-soft: #46626C;
+    --deep: #0B3B4A;         /* hero ground, dark petrol */
+    --deep-2: #0E4A5C;
+    --tide: #147D8C;         /* accent teal */
+    --tide-soft: #D7EAEC;
+    --sand: #E8C97E;         /* warm sand, small doses */
+    --line: #D8E4E6;
+    --on-deep: #EAF4F5;
+    --on-deep-soft: #9FC3C9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #081E26;
+      --surface: #0C2933;
+      --ink: #E4EFF0;
+      --ink-soft: #93B2B8;
+      --deep: #06161C;
+      --deep-2: #0A2530;
+      --tide: #3BAABB;
+      --tide-soft: #123844;
+      --sand: #E8C97E;
+      --line: #16404C;
+      --on-deep: #EAF4F5;
+      --on-deep-soft: #7FA6AD;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #081E26;
+    --surface: #0C2933;
+    --ink: #E4EFF0;
+    --ink-soft: #93B2B8;
+    --deep: #06161C;
+    --deep-2: #0A2530;
+    --tide: #3BAABB;
+    --tide-soft: #123844;
+    --sand: #E8C97E;
+    --line: #16404C;
+    --on-deep: #EAF4F5;
+    --on-deep-soft: #7FA6AD;
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.75;
+  }
+  a { color: var(--tide); text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--tide); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- header ---------- */
+  header {
+    background: var(--deep);
+    color: var(--on-deep);
+  }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0;
+  }
+  .wordmark {
+    font-weight: 800; letter-spacing: .14em; font-size: .95rem;
+    color: var(--on-deep); text-transform: uppercase;
+  }
+  .wordmark:hover { text-decoration: none; }
+  nav ul { display: flex; gap: 28px; list-style: none; padding: 0; }
+  nav ul a { color: var(--on-deep-soft); font-size: .9rem; }
+  nav ul a:hover { color: var(--on-deep); text-decoration: none; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative; overflow: hidden;
+    background: linear-gradient(180deg, var(--deep) 0%, var(--deep-2) 100%);
+    color: var(--on-deep);
+    padding: 96px 0 120px;
+  }
+  .hero .eyebrow {
+    text-transform: uppercase; letter-spacing: .22em; font-size: .78rem;
+    color: var(--sand); font-weight: 700;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5.5vw, 3.4rem);
+    font-weight: 800; line-height: 1.25; letter-spacing: -.01em;
+    margin: 18px 0 20px; text-wrap: balance;
+  }
+  .hero p { max-width: 34em; color: var(--on-deep-soft); font-size: 1.05rem; }
+
+  .bubbles { position: absolute; inset: 0; pointer-events: none; }
+  .bubbles span {
+    position: absolute; bottom: -40px; border-radius: 50%;
+    border: 1.5px solid rgba(234, 244, 245, .28);
+    animation: rise 14s linear infinite;
+  }
+  .bubbles span:nth-child(1) { left: 12%; width: 14px; height: 14px; animation-duration: 16s; }
+  .bubbles span:nth-child(2) { left: 28%; width: 8px;  height: 8px;  animation-duration: 11s; animation-delay: 3s; }
+  .bubbles span:nth-child(3) { left: 55%; width: 18px; height: 18px; animation-duration: 19s; animation-delay: 1s; }
+  .bubbles span:nth-child(4) { left: 72%; width: 10px; height: 10px; animation-duration: 13s; animation-delay: 6s; }
+  .bubbles span:nth-child(5) { left: 88%; width: 13px; height: 13px; animation-duration: 17s; animation-delay: 4s; }
+  @keyframes rise {
+    from { transform: translateY(0); opacity: 0; }
+    12%  { opacity: 1; }
+    to   { transform: translateY(-560px); opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bubbles span { animation: none; display: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ---------- sections ---------- */
+  section { padding: 88px 0; }
+  .label {
+    text-transform: uppercase; letter-spacing: .2em; font-size: .75rem;
+    font-weight: 700; color: var(--tide);
+  }
+  h2 {
+    font-size: 1.7rem; font-weight: 800; letter-spacing: -.01em;
+    margin: 10px 0 22px; text-wrap: balance;
+  }
+  section > .wrap > p { max-width: 38em; color: var(--ink-soft); }
+
+  /* ---------- game card ---------- */
+  .game-card {
+    display: grid; grid-template-columns: 260px 1fr; gap: 0;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; overflow: hidden; margin-top: 34px;
+  }
+  .game-art {
+    background: linear-gradient(160deg, var(--deep-2), var(--deep));
+    display: flex; align-items: center; justify-content: center;
+    padding: 36px 24px; min-height: 220px;
+  }
+  .game-art svg { width: 150px; height: auto; }
+  .game-body { padding: 30px 34px; }
+  .game-body .status {
+    display: inline-block; font-size: .75rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    background: var(--tide-soft); color: var(--tide);
+    padding: 4px 12px; border-radius: 999px; margin-bottom: 14px;
+  }
+  .game-body h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; }
+  .game-body .sub { color: var(--ink-soft); font-size: .92rem; margin-bottom: 14px; }
+  .game-body p { color: var(--ink-soft); font-size: .97rem; max-width: 34em; }
+  @media (max-width: 640px) {
+    .game-card { grid-template-columns: 1fr; }
+    .game-art { min-height: 170px; }
+  }
+
+  /* ---------- contact ---------- */
+  .contact-box {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 34px; margin-top: 30px;
+    display: flex; flex-wrap: wrap; gap: 10px 40px;
+  }
+  .contact-box dt {
+    text-transform: uppercase; letter-spacing: .14em;
+    font-size: .72rem; font-weight: 700; color: var(--ink-soft);
+  }
+  .contact-box dd { margin: 2px 0 0; font-weight: 600; }
+
+  /* ---------- footer ---------- */
+  footer {
+    background: var(--deep); color: var(--on-deep-soft);
+    padding: 40px 0 48px; font-size: .88rem;
+  }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
+  footer a { color: var(--on-deep-soft); }
+  footer a:hover { color: var(--on-deep); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="주 메뉴">
+      <a class="wordmark" href="#top">Hesam Studio</a>
+      <ul>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#games">게임</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="hero" id="top">
+    <div class="bubbles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="wrap">
+      <div class="eyebrow">Indie Game Studio · Seoul</div>
+      <h1>깊은 바다에서<br>건져 올린 게임</h1>
+      <p>해삼 스튜디오는 바다에서 영감을 받은 모바일 게임을 만드는 1인 인디 스튜디오입니다.
+         작지만 오래 곁에 두고 싶은 게임을 목표로 합니다.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="about">
+    <div class="wrap">
+      <div class="label">About</div>
+      <h2>작게, 깊게, 꾸준히</h2>
+      <p>해삼 스튜디오(Hesam Studio)는 수집과 성장의 즐거움을 다루는 게임을 만듭니다.
+         화려한 것보다 매일 열어보고 싶은 것, 복잡한 것보다 손에 붙는 것을 먼저 생각합니다.
+         지금은 첫 번째 게임인 아쿠아리움 수집 게임을 개발하고 있습니다.</p>
+    </div>
+  </section>
+
+  <section id="games">
+    <div class="wrap">
+      <div class="label">Games</div>
+      <h2>만들고 있는 게임</h2>
+
+      <div class="game-card">
+        <div class="game-art" aria-hidden="true">
+          <!-- clownfish emblem -->
+          <svg viewBox="0 0 120 84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="물고기 엠블럼">
+            <g fill="none">
+              <path d="M14 42c14-20 34-30 52-30 22 0 38 14 40 30-2 16-18 30-40 30-18 0-38-10-52-30z" fill="#E8945A"/>
+              <path d="M106 42l12-16v32z" fill="#E8945A"/>
+              <path d="M40 14c6 8 6 48 0 56" stroke="#F5EFE2" stroke-width="9" stroke-linecap="round"/>
+              <path d="M70 13c7 9 7 49 0 58" stroke="#F5EFE2" stroke-width="9" stroke-linecap="round"/>
+              <circle cx="30" cy="38" r="4.5" fill="#0B3B4A"/>
+              <circle cx="18" cy="20" r="4" stroke="#9FC3C9" stroke-width="2"/>
+              <circle cx="10" cy="10" r="2.5" stroke="#9FC3C9" stroke-width="2"/>
+            </g>
+          </svg>
+        </div>
+        <div class="game-body">
+          <span class="status">개발 중 · In Development</span>
+          <h3>Hatching Aquarium: Merge Fish</h3>
+          <div class="sub">모바일 · 아쿠아리움 수집 게임</div>
+          <p>알을 부화시키고, 치어를 길러 성어로 키우고, 합쳐서 더 귀한 물고기를 만드는
+             수집형 아쿠아리움. 나만의 바다를 한 페이지씩 도감으로 채워 갑니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="label">Contact</div>
+      <h2>연락처</h2>
+      <p>제휴, 퍼블리싱, 채용 문의 모두 이메일로 받고 있습니다.</p>
+      <dl class="contact-box">
+        <div>
+          <dt>Studio</dt>
+          <dd>Hesam Studio (해삼 스튜디오)</dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd><a href="mailto:contact@hesamstudio.com">contact@hesamstudio.com</a></dd>
+        </div>
+        <div>
+          <dt>Support</dt>
+          <dd><a href="mailto:support@hesamstudio.com">support@hesamstudio.com</a></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Hesam Studio. All rights reserved.</div>
+    <div><a href="privacy.html">개인정보처리방침 · Privacy Policy</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
