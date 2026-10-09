@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>확률형 아이템 정보 · Hesam Studio</title>
+<style>
+  :root {
+    --bg: #F2F7F7;
+    --surface: #FFFFFF;
+    --ink: #0E2A33;
+    --ink-soft: #46626C;
+    --deep: #0B3B4A;
+    --tide: #147D8C;
+    --line: #D8E4E6;
+    --on-deep: #EAF4F5;
+    --th-bg: #E9F1F2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #081E26; --surface: #0C2933; --ink: #E4EFF0; --ink-soft: #93B2B8;
+      --deep: #06161C; --tide: #3BAABB; --line: #16404C; --on-deep: #EAF4F5;
+      --th-bg: #10333F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #081E26; --surface: #0C2933; --ink: #E4EFF0; --ink-soft: #93B2B8;
+    --deep: #06161C; --tide: #3BAABB; --line: #16404C; --on-deep: #EAF4F5;
+    --th-bg: #10333F;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.8;
+  }
+  a { color: var(--tide); }
+  header { background: var(--deep); color: var(--on-deep); padding: 18px 0; }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; }
+  header a { color: var(--on-deep); text-decoration: none; font-weight: 800;
+             letter-spacing: .14em; font-size: .9rem; text-transform: uppercase; }
+  .wrap { max-width: 800px; margin: 0 auto; padding: 0 22px; }
+  main { padding: 48px 0 90px; }
+  h1 { font-size: 1.55rem; font-weight: 800; margin-bottom: .3em; }
+  h2 { font-size: 1.12rem; font-weight: 800; margin: 2.2em 0 .6em;
+       border-bottom: 1px solid var(--line); padding-bottom: .35em; }
+  p, ul { margin-bottom: 1em; }
+  ul { padding-left: 1.3em; }
+  .meta { color: var(--ink-soft); font-size: .9rem; margin-bottom: 2em; }
+  .toc { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+         padding: 14px 22px; font-size: .92rem; margin-bottom: 1.5em; }
+  .table-scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: .93rem;
+          background: var(--surface); }
+  th, td { border: 1px solid var(--line); padding: 8px 12px; text-align: left; vertical-align: top; }
+  th { background: var(--th-bg); }
+  hr.split { margin: 4.5em 0 2.5em; border: 0; border-top: 2px solid var(--line); }
+  h3 { font-size: 1rem; font-weight: 800; margin: 1.6em 0 .4em; }
+  details { margin: .4em 0; }
+  summary { cursor: pointer; font-weight: 700; }
+  footer { background: var(--deep); color: var(--on-deep); padding: 26px 0; font-size: .85rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="index.html">Hesam Studio</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+<h1>확률형 아이템 정보</h1>
+<p class="meta">
+  게임: Hatching Aquarium: Merge Fish (물고기 키우기)<br>
+  개발자: Hesam Studio (해삼 스튜디오)<br>
+  적용 버전: 1.3.4 · 최종 수정일: 2026년 10월 9일
+</p>
+
+<p>「게임산업진흥에 관한 법률」에 따라, 유료 재화(다이아) 또는 현금으로 직접·간접적으로 얻을 수 있는
+무작위 결과의 확률을 공개합니다. 모든 확률은 게임 안에서 실제로 쓰는 값이며, 이 페이지에서는
+소수점 셋째 자리에서 반올림해 표시합니다(표의 합이 반올림 때문에 100%와 조금 다를 수 있습니다).
+확률을 바꾸는 경우 이 페이지와 게임 안 안내를 함께 고칩니다.</p>
+
+<div class="toc">
+  <a href="#fishing">1. 낚시</a> · <a href="#enhance">2. 낚시 장비 강화</a> ·
+  <a href="#egg">3. 알 부화와 조합 아이템</a> · <a href="#forge">4. 대장간(진주)</a> ·
+  <a href="#golden">5. 황금 물고기</a> · <a href="#gift">6. 친구 선물</a> ·
+  <a href="#wheel">7. 행운의 돌림판(무료)</a>
+</div>
+
+<h2 id="fishing">1. 낚시</h2>
+<p><strong>얻는 방법</strong>: 미끼 1개로 한 번 낚습니다. 특수 미끼 100다이아, 일반 미끼 1,000골드,
+미끼 패키지(일반 미끼 20개 + 특수 미끼 5개, 주 1회), 낚시 패스 보상.</p>
+<p><strong>뽑는 순서</strong></p>
+<ul>
+  <li>던진 거리로 깊이가 정해집니다. 아직 열지 않은 깊이(깊은 바다는 도감 점수 2,000점, 심해는 3,000점)는 열린 가장 깊은 곳으로 내려 계산합니다.</li>
+  <li>먼저 아래 표로 <strong>등급</strong>을 뽑고, 그 깊이와 그보다 얕은 곳에 사는 같은 등급 물고기 중에서 <strong>균등하게</strong> 한 마리를 뽑습니다.</li>
+  <li>뽑힌 등급의 물고기가 그 깊이에 없으면, 그 깊이의 모든 물고기 중에서 균등하게 뽑습니다.</li>
+  <li>물고기는 찌에 입질할 때 정해지며, 낚아 올리기는 미니게임 결과에 따릅니다. 놓치면 미끼는 사용되고 낚시 코인 10개를 받습니다.</li>
+</ul>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>일반 미끼</th><th>특수 미끼</th></tr>
+<tr><td>일반</td><td>49.00%</td><td>45.87%</td></tr>
+<tr><td>고급</td><td>30.00%</td><td>28.09%</td></tr>
+<tr><td>희귀</td><td>15.00%</td><td>14.04%</td></tr>
+<tr><td>영웅</td><td>5.00%</td><td>10.00%</td></tr>
+<tr><td>전설</td><td>1.00%</td><td>2.00%</td></tr>
+</table></div>
+<p>특수 미끼는 영웅·전설 확률을 2배로 올리고, 나머지 88%를 일반·고급·희귀에 49:30:15로 나눕니다.</p>
+<h3>깊이별 물고기 확률 (기간 한정 물고기가 없을 때)</h3>
+
+<p><strong>얕은 바다</strong> (던진 거리 50m 미만, 이보다 얕은 곳의 물고기 포함)</p>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>일반 미끼</th><th>특수 미끼</th></tr>
+<tr><td>일반</td><td>흑금자리돔</td><td>얕은 바다</td><td>19.00%</td><td>17.96%</td></tr>
+<tr><td>일반</td><td>노랑거북복</td><td>얕은 바다</td><td>19.00%</td><td>17.96%</td></tr>
+<tr><td>일반</td><td>고등어</td><td>얕은 바다</td><td>19.00%</td><td>17.96%</td></tr>
+<tr><td>고급</td><td>안장흰동가리</td><td>얕은 바다</td><td>17.67%</td><td>16.72%</td></tr>
+<tr><td>고급</td><td>파란줄망둑</td><td>얕은 바다</td><td>17.67%</td><td>16.72%</td></tr>
+<tr><td>영웅</td><td>혹부리비늘돔</td><td>얕은 바다</td><td>7.67%</td><td>12.67%</td></tr>
+</table></div>
+<p><strong>중간 바다</strong> (던진 거리 50m 이상 100m 미만, 이보다 얕은 곳의 물고기 포함)</p>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>일반 미끼</th><th>특수 미끼</th></tr>
+<tr><td>일반</td><td>흑금자리돔</td><td>얕은 바다</td><td>16.33%</td><td>15.29%</td></tr>
+<tr><td>일반</td><td>노랑거북복</td><td>얕은 바다</td><td>16.33%</td><td>15.29%</td></tr>
+<tr><td>일반</td><td>고등어</td><td>얕은 바다</td><td>16.33%</td><td>15.29%</td></tr>
+<tr><td>고급</td><td>가다랑어</td><td>중간 바다</td><td>10.00%</td><td>9.36%</td></tr>
+<tr><td>고급</td><td>안장흰동가리</td><td>얕은 바다</td><td>10.00%</td><td>9.36%</td></tr>
+<tr><td>고급</td><td>파란줄망둑</td><td>얕은 바다</td><td>10.00%</td><td>9.36%</td></tr>
+<tr><td>희귀</td><td>꼬치삼치</td><td>중간 바다</td><td>15.00%</td><td>14.04%</td></tr>
+<tr><td>영웅</td><td>실전갱이</td><td>중간 바다</td><td>2.50%</td><td>5.00%</td></tr>
+<tr><td>영웅</td><td>혹부리비늘돔</td><td>얕은 바다</td><td>2.50%</td><td>5.00%</td></tr>
+<tr><td>전설</td><td>개복치</td><td>중간 바다</td><td>0.50%</td><td>1.00%</td></tr>
+<tr><td>전설</td><td>쥐가오리</td><td>중간 바다</td><td>0.50%</td><td>1.00%</td></tr>
+</table></div>
+<p><strong>깊은 바다</strong> (던진 거리 100m 이상 150m 미만, 이보다 얕은 곳의 물고기 포함)</p>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>일반 미끼</th><th>특수 미끼</th></tr>
+<tr><td>일반</td><td>흑금자리돔</td><td>얕은 바다</td><td>16.33%</td><td>15.29%</td></tr>
+<tr><td>일반</td><td>노랑거북복</td><td>얕은 바다</td><td>16.33%</td><td>15.29%</td></tr>
+<tr><td>일반</td><td>고등어</td><td>얕은 바다</td><td>16.33%</td><td>15.29%</td></tr>
+<tr><td>고급</td><td>가다랑어</td><td>중간 바다</td><td>10.00%</td><td>9.36%</td></tr>
+<tr><td>고급</td><td>안장흰동가리</td><td>얕은 바다</td><td>10.00%</td><td>9.36%</td></tr>
+<tr><td>고급</td><td>파란줄망둑</td><td>얕은 바다</td><td>10.00%</td><td>9.36%</td></tr>
+<tr><td>희귀</td><td>노을도티백</td><td>깊은 바다</td><td>3.75%</td><td>3.51%</td></tr>
+<tr><td>희귀</td><td>폭죽망둑</td><td>깊은 바다</td><td>3.75%</td><td>3.51%</td></tr>
+<tr><td>희귀</td><td>파랑머리옥돔</td><td>깊은 바다</td><td>3.75%</td><td>3.51%</td></tr>
+<tr><td>희귀</td><td>꼬치삼치</td><td>중간 바다</td><td>3.75%</td><td>3.51%</td></tr>
+<tr><td>영웅</td><td>황금도티백</td><td>깊은 바다</td><td>1.00%</td><td>2.00%</td></tr>
+<tr><td>영웅</td><td>자바리</td><td>깊은 바다</td><td>1.00%</td><td>2.00%</td></tr>
+<tr><td>영웅</td><td>복면천사돔</td><td>깊은 바다</td><td>1.00%</td><td>2.00%</td></tr>
+<tr><td>영웅</td><td>실전갱이</td><td>중간 바다</td><td>1.00%</td><td>2.00%</td></tr>
+<tr><td>영웅</td><td>혹부리비늘돔</td><td>얕은 바다</td><td>1.00%</td><td>2.00%</td></tr>
+<tr><td>전설</td><td>페퍼민트천사돔</td><td>깊은 바다</td><td>0.33%</td><td>0.67%</td></tr>
+<tr><td>전설</td><td>개복치</td><td>중간 바다</td><td>0.33%</td><td>0.67%</td></tr>
+<tr><td>전설</td><td>쥐가오리</td><td>중간 바다</td><td>0.33%</td><td>0.67%</td></tr>
+</table></div>
+<p><strong>심해</strong> (던진 거리 150m 이상, 이보다 얕은 곳의 물고기 포함)</p>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>일반 미끼</th><th>특수 미끼</th></tr>
+<tr><td>일반</td><td>흑금자리돔</td><td>얕은 바다</td><td>16.33%</td><td>15.29%</td></tr>
+<tr><td>일반</td><td>노랑거북복</td><td>얕은 바다</td><td>16.33%</td><td>15.29%</td></tr>
+<tr><td>일반</td><td>고등어</td><td>얕은 바다</td><td>16.33%</td><td>15.29%</td></tr>
+<tr><td>고급</td><td>가다랑어</td><td>중간 바다</td><td>10.00%</td><td>9.36%</td></tr>
+<tr><td>고급</td><td>안장흰동가리</td><td>얕은 바다</td><td>10.00%</td><td>9.36%</td></tr>
+<tr><td>고급</td><td>파란줄망둑</td><td>얕은 바다</td><td>10.00%</td><td>9.36%</td></tr>
+<tr><td>희귀</td><td>노을도티백</td><td>깊은 바다</td><td>3.75%</td><td>3.51%</td></tr>
+<tr><td>희귀</td><td>폭죽망둑</td><td>깊은 바다</td><td>3.75%</td><td>3.51%</td></tr>
+<tr><td>희귀</td><td>파랑머리옥돔</td><td>깊은 바다</td><td>3.75%</td><td>3.51%</td></tr>
+<tr><td>희귀</td><td>꼬치삼치</td><td>중간 바다</td><td>3.75%</td><td>3.51%</td></tr>
+<tr><td>영웅</td><td>도끼고기</td><td>심해</td><td>0.71%</td><td>1.43%</td></tr>
+<tr><td>영웅</td><td>물개복치</td><td>심해</td><td>0.71%</td><td>1.43%</td></tr>
+<tr><td>영웅</td><td>황금도티백</td><td>깊은 바다</td><td>0.71%</td><td>1.43%</td></tr>
+<tr><td>영웅</td><td>자바리</td><td>깊은 바다</td><td>0.71%</td><td>1.43%</td></tr>
+<tr><td>영웅</td><td>복면천사돔</td><td>깊은 바다</td><td>0.71%</td><td>1.43%</td></tr>
+<tr><td>영웅</td><td>실전갱이</td><td>중간 바다</td><td>0.71%</td><td>1.43%</td></tr>
+<tr><td>영웅</td><td>혹부리비늘돔</td><td>얕은 바다</td><td>0.71%</td><td>1.43%</td></tr>
+<tr><td>전설</td><td>앵무조개</td><td>심해</td><td>0.25%</td><td>0.50%</td></tr>
+<tr><td>전설</td><td>페퍼민트천사돔</td><td>깊은 바다</td><td>0.25%</td><td>0.50%</td></tr>
+<tr><td>전설</td><td>개복치</td><td>중간 바다</td><td>0.25%</td><td>0.50%</td></tr>
+<tr><td>전설</td><td>쥐가오리</td><td>중간 바다</td><td>0.25%</td><td>0.50%</td></tr>
+</table></div>
+<p><strong>기간 한정 물고기</strong>: 그 기간에는 같은 등급 물고기 목록에 더해져 같은 등급 안에서 균등하게 뽑힙니다.</p>
+<ul>
+  <li>이달의 한정 물고기(도감 점수 1,000점 이상, UTC 기준 해당 달): 10월 전어(영웅, 얕은 바다), 11월 돌돔(영웅, 얕은 바다), 12월 아귀(영웅, 중간 바다).</li>
+  <li>달물결(도감 점수 2,500점 이상, UTC 기준 보름·삭 당일 앞뒤 하루씩 3일): 보름 룩다운피쉬(영웅, 얕은 바다)·산갈치(전설, 깊은 바다~심해), 삭 붕장어(영웅, 얕은 바다)·돗돔(전설, 깊은 바다).</li>
+</ul>
+
+<p>예: 10월 얕은 바다, 일반 미끼 — 흑금자리돔 18.62%, 노랑거북복 18.62%, 고등어 18.62%, 안장흰동가리 17.29%, 파란줄망둑 17.29%, 혹부리비늘돔 4.79%, 전어 4.79%.</p>
+<h2 id="enhance">2. 낚시 장비 강화</h2>
+<p><strong>얻는 방법</strong>: 강화 1회에 골드와 강화석이 듭니다. 강화석은 강화석 패키지(강화석 50개 + 하락방지권 2개, 주 1회),
+낚시 패스, 낚시 코인 교환소에서 얻습니다. 낚싯대·낚싯줄·릴·봉돌 네 부위 모두 같은 확률이며 최대 30강입니다.</p>
+<ul>
+  <li><strong>실패하면 1단계 내려갑니다</strong>(성공 확률 100%인 단계와 0강은 내려가지 않습니다).</li>
+  <li>하락방지권이 있으면 실패해도 단계가 유지되며, 하락방지권은 실제로 단계가 내려갈 실패에서만 1장 사용됩니다.</li>
+  <li>천장(보장) 장치는 없습니다.</li>
+</ul>
+<div class="table-scroll"><table>
+<tr><th>현재 → 다음</th><th>성공</th><th>실패(1단계 하락)</th></tr>
+<tr><td>0강 → 1강</td><td>100.00%</td><td>없음</td></tr>
+<tr><td>1강 → 2강</td><td>100.00%</td><td>없음</td></tr>
+<tr><td>2강 → 3강</td><td>100.00%</td><td>없음</td></tr>
+<tr><td>3강 → 4강</td><td>100.00%</td><td>없음</td></tr>
+<tr><td>4강 → 5강</td><td>80.00%</td><td>20.00%</td></tr>
+<tr><td>5강 → 6강</td><td>70.00%</td><td>30.00%</td></tr>
+<tr><td>6강 → 7강</td><td>60.00%</td><td>40.00%</td></tr>
+<tr><td>7강 → 8강</td><td>50.00%</td><td>50.00%</td></tr>
+<tr><td>8강 → 9강</td><td>40.00%</td><td>60.00%</td></tr>
+<tr><td>9강 → 10강</td><td>30.00%</td><td>70.00%</td></tr>
+<tr><td>10강 → 11강</td><td>25.00%</td><td>75.00%</td></tr>
+<tr><td>11강 → 12강</td><td>15.00%</td><td>85.00%</td></tr>
+<tr><td>12강 → 13강</td><td>14.00%</td><td>86.00%</td></tr>
+<tr><td>13강 → 14강</td><td>13.00%</td><td>87.00%</td></tr>
+<tr><td>14강 → 15강</td><td>12.00%</td><td>88.00%</td></tr>
+<tr><td>15강 → 16강</td><td>11.00%</td><td>89.00%</td></tr>
+<tr><td>16강 → 17강 ~ 29강 → 30강</td><td>10.00%</td><td>90.00%</td></tr>
+</table></div>
+<h2 id="egg">3. 알 부화와 조합 아이템</h2>
+<p><strong>얻는 방법</strong>: 알을 놓는 것은 무료이며, 알에 함께 놓는 <strong>조합 아이템</strong>은 다이아로 살 수 있습니다
+(조합 아이템 화면, 일일 상점, 대장간, 패스·퀘스트 보상 등으로도 얻습니다). 놓은 조합 아이템은 적중 여부와 상관없이 알을 놓을 때 사용됩니다.</p>
+<h3>조합 아이템 없이 놓은 알</h3>
+<ul>
+  <li>등급 확률: 일반 50% · 고급 30% · 희귀 15% · 영웅 4.5% · 전설 0.5%. 아직 열린 물고기가 없는 등급은 빼고 나머지를 같은 비율로 다시 나눕니다.</li>
+  <li>같은 등급 안에서는 서식지 가중치로 뽑습니다: 산호초 3, 산호 계곡 2, 산호 정원 2, 해초 숲 2, 갯벌 1, 그 밖의 서식지 1.</li>
+  <li>대상은 플레이어 레벨과 도감 점수로 열린 물고기입니다(서식지 해금: 산호초 0점, 산호 계곡 250점, 산호 정원 450점, 갯벌 700점, 해초 숲 1,500점).
+      이달의 한정 물고기(도감 500점 이상)와 달물결 물고기(도감 2,500점 이상, 보름·삭 기간)는 그 기간에 대상에 더해집니다.</li>
+  <li>계정의 첫 5개 알은 튜토리얼용으로 정해져 있습니다(흰동가리, 블루탱, 흰동가리, 블루탱, 보석자리돔).</li>
+</ul>
+<p><strong>예: 모든 서식지가 열리고 플레이어 레벨 30, 기간 한정 물고기가 없을 때</strong></p>
+
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>일반</td><td>흰동가리</td><td>산호초</td><td>6.25%</td></tr>
+<tr><td>일반</td><td>블루탱</td><td>산호초</td><td>6.25%</td></tr>
+<tr><td>일반</td><td>노랑쥐돔</td><td>산호초</td><td>6.25%</td></tr>
+<tr><td>일반</td><td>나비고기</td><td>산호초</td><td>6.25%</td></tr>
+<tr><td>일반</td><td>발렌티니복어</td><td>산호 계곡</td><td>4.17%</td></tr>
+<tr><td>일반</td><td>불꽃망둑</td><td>산호 계곡</td><td>4.17%</td></tr>
+<tr><td>일반</td><td>딸기도티백</td><td>산호 계곡</td><td>4.17%</td></tr>
+<tr><td>일반</td><td>너구리나비고기</td><td>산호 정원</td><td>4.17%</td></tr>
+<tr><td>일반</td><td>두빛베도라치</td><td>갯벌</td><td>2.08%</td></tr>
+<tr><td>일반</td><td>휠러새우망둑</td><td>갯벌</td><td>2.08%</td></tr>
+<tr><td>일반</td><td>초록자리돔</td><td>해초 숲</td><td>4.17%</td></tr>
+<tr><td>고급</td><td>꼬리점놀래기</td><td>산호초</td><td>3.75%</td></tr>
+<tr><td>고급</td><td>흑백자리돔</td><td>산호초</td><td>3.75%</td></tr>
+<tr><td>고급</td><td>보석자리돔</td><td>산호초</td><td>3.75%</td></tr>
+<tr><td>고급</td><td>왕관도티백</td><td>산호 계곡</td><td>2.50%</td></tr>
+<tr><td>고급</td><td>외뿔쥐돔</td><td>산호 계곡</td><td>2.50%</td></tr>
+<tr><td>고급</td><td>점박이나비고기</td><td>산호 정원</td><td>2.50%</td></tr>
+<tr><td>고급</td><td>긴코나비고기</td><td>산호 정원</td><td>2.50%</td></tr>
+<tr><td>고급</td><td>여우독가시치</td><td>산호 정원</td><td>2.50%</td></tr>
+<tr><td>고급</td><td>황제천사돔</td><td>산호 정원</td><td>2.50%</td></tr>
+<tr><td>고급</td><td>노랑파수꾼망둑</td><td>갯벌</td><td>1.25%</td></tr>
+<tr><td>고급</td><td>성대</td><td>갯벌</td><td>1.25%</td></tr>
+<tr><td>고급</td><td>뿔복</td><td>갯벌</td><td>1.25%</td></tr>
+<tr><td>희귀</td><td>파랑머리놀래기</td><td>산호초</td><td>2.37%</td></tr>
+<tr><td>희귀</td><td>방가이동갈돔</td><td>산호 계곡</td><td>1.58%</td></tr>
+<tr><td>희귀</td><td>사마귀씬벵이</td><td>산호 계곡</td><td>1.58%</td></tr>
+<tr><td>희귀</td><td>광대쥐돔</td><td>산호 계곡</td><td>1.58%</td></tr>
+<tr><td>희귀</td><td>여덟줄나비고기</td><td>산호 정원</td><td>1.58%</td></tr>
+<tr><td>희귀</td><td>안장나비고기</td><td>산호 정원</td><td>1.58%</td></tr>
+<tr><td>희귀</td><td>무지개비늘돔</td><td>산호 정원</td><td>1.58%</td></tr>
+<tr><td>희귀</td><td>초승달천사돔</td><td>산호 정원</td><td>1.58%</td></tr>
+<tr><td>희귀</td><td>민무늬거북복</td><td>갯벌</td><td>0.79%</td></tr>
+<tr><td>희귀</td><td>랜달망둑</td><td>갯벌</td><td>0.79%</td></tr>
+<tr><td>영웅</td><td>와이오밍흰동가리</td><td>산호초</td><td>1.35%</td></tr>
+<tr><td>영웅</td><td>삼각나비고기</td><td>산호 계곡</td><td>0.90%</td></tr>
+<tr><td>영웅</td><td>장미망둑</td><td>갯벌</td><td>0.45%</td></tr>
+<tr><td>영웅</td><td>붉은해초해룡</td><td>해초 숲</td><td>0.90%</td></tr>
+<tr><td>영웅</td><td>마린베타</td><td>해초 숲</td><td>0.90%</td></tr>
+<tr><td>전설</td><td>나뭇잎해룡</td><td>해초 숲</td><td>0.50%</td></tr>
+</table></div>
+<h3>조합 아이템을 놓은 알</h3>
+<ul>
+  <li>조합 아이템(등급·서식지·속성)은 각각 자기 확률(10% · 20% · 50% · 100%)로 따로 적중을 굴립니다.</li>
+  <li>적중한 아이템은 그 특성을 <strong>고정</strong>합니다. 적중한 특성을 모두 만족하는 물고기(도감으로 열린 서식지, 플레이어 레벨 제한 없음) 중에서
+      위와 같은 등급·서식지 가중치로 뽑습니다. 바다 서식지 아이템이 적중하면 그 바다의 물고기도 대상이 됩니다.</li>
+  <li>모두 빗나가면 조합 아이템 없이 놓은 알과 같습니다.</li>
+  <li>따라서 최종 확률 = 적중·빗나감의 모든 경우에 대해 (그 경우가 일어날 확률 × 그 경우의 물고기 확률)의 합입니다.
+      예: 10% 영웅 아이템 하나만 놓으면 영웅이 나올 확률은 10% + 90% × 4.5% = <strong>14.05%</strong>입니다.</li>
+  <li>천장(보장) 장치는 없습니다.</li>
+</ul>
+<p><strong>아이템 하나가 적중했을 때 나오는 물고기</strong> (모든 서식지가 열렸을 때)</p>
+
+<details><summary>등급 아이템 「일반」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>일반</td><td>흰동가리</td><td>산호초</td><td>12.50%</td></tr>
+<tr><td>일반</td><td>블루탱</td><td>산호초</td><td>12.50%</td></tr>
+<tr><td>일반</td><td>노랑쥐돔</td><td>산호초</td><td>12.50%</td></tr>
+<tr><td>일반</td><td>나비고기</td><td>산호초</td><td>12.50%</td></tr>
+<tr><td>일반</td><td>발렌티니복어</td><td>산호 계곡</td><td>8.33%</td></tr>
+<tr><td>일반</td><td>불꽃망둑</td><td>산호 계곡</td><td>8.33%</td></tr>
+<tr><td>일반</td><td>딸기도티백</td><td>산호 계곡</td><td>8.33%</td></tr>
+<tr><td>일반</td><td>너구리나비고기</td><td>산호 정원</td><td>8.33%</td></tr>
+<tr><td>일반</td><td>두빛베도라치</td><td>갯벌</td><td>4.17%</td></tr>
+<tr><td>일반</td><td>휠러새우망둑</td><td>갯벌</td><td>4.17%</td></tr>
+<tr><td>일반</td><td>초록자리돔</td><td>해초 숲</td><td>8.33%</td></tr>
+</table></div>
+</details>
+<details><summary>등급 아이템 「고급」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>고급</td><td>꼬리점놀래기</td><td>산호초</td><td>12.50%</td></tr>
+<tr><td>고급</td><td>흑백자리돔</td><td>산호초</td><td>12.50%</td></tr>
+<tr><td>고급</td><td>보석자리돔</td><td>산호초</td><td>12.50%</td></tr>
+<tr><td>고급</td><td>왕관도티백</td><td>산호 계곡</td><td>8.33%</td></tr>
+<tr><td>고급</td><td>외뿔쥐돔</td><td>산호 계곡</td><td>8.33%</td></tr>
+<tr><td>고급</td><td>점박이나비고기</td><td>산호 정원</td><td>8.33%</td></tr>
+<tr><td>고급</td><td>긴코나비고기</td><td>산호 정원</td><td>8.33%</td></tr>
+<tr><td>고급</td><td>여우독가시치</td><td>산호 정원</td><td>8.33%</td></tr>
+<tr><td>고급</td><td>황제천사돔</td><td>산호 정원</td><td>8.33%</td></tr>
+<tr><td>고급</td><td>노랑파수꾼망둑</td><td>갯벌</td><td>4.17%</td></tr>
+<tr><td>고급</td><td>성대</td><td>갯벌</td><td>4.17%</td></tr>
+<tr><td>고급</td><td>뿔복</td><td>갯벌</td><td>4.17%</td></tr>
+</table></div>
+</details>
+<details><summary>등급 아이템 「희귀」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>희귀</td><td>파랑머리놀래기</td><td>산호초</td><td>15.79%</td></tr>
+<tr><td>희귀</td><td>방가이동갈돔</td><td>산호 계곡</td><td>10.53%</td></tr>
+<tr><td>희귀</td><td>사마귀씬벵이</td><td>산호 계곡</td><td>10.53%</td></tr>
+<tr><td>희귀</td><td>광대쥐돔</td><td>산호 계곡</td><td>10.53%</td></tr>
+<tr><td>희귀</td><td>여덟줄나비고기</td><td>산호 정원</td><td>10.53%</td></tr>
+<tr><td>희귀</td><td>안장나비고기</td><td>산호 정원</td><td>10.53%</td></tr>
+<tr><td>희귀</td><td>무지개비늘돔</td><td>산호 정원</td><td>10.53%</td></tr>
+<tr><td>희귀</td><td>초승달천사돔</td><td>산호 정원</td><td>10.53%</td></tr>
+<tr><td>희귀</td><td>민무늬거북복</td><td>갯벌</td><td>5.26%</td></tr>
+<tr><td>희귀</td><td>랜달망둑</td><td>갯벌</td><td>5.26%</td></tr>
+</table></div>
+</details>
+<details><summary>등급 아이템 「영웅」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>영웅</td><td>와이오밍흰동가리</td><td>산호초</td><td>30.00%</td></tr>
+<tr><td>영웅</td><td>삼각나비고기</td><td>산호 계곡</td><td>20.00%</td></tr>
+<tr><td>영웅</td><td>장미망둑</td><td>갯벌</td><td>10.00%</td></tr>
+<tr><td>영웅</td><td>붉은해초해룡</td><td>해초 숲</td><td>20.00%</td></tr>
+<tr><td>영웅</td><td>마린베타</td><td>해초 숲</td><td>20.00%</td></tr>
+</table></div>
+</details>
+<details><summary>등급 아이템 「전설」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>전설</td><td>나뭇잎해룡</td><td>해초 숲</td><td>100.00%</td></tr>
+</table></div>
+</details>
+<details><summary>서식지 아이템 「산호초」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>일반</td><td>흰동가리</td><td>산호초</td><td>12.56%</td></tr>
+<tr><td>일반</td><td>블루탱</td><td>산호초</td><td>12.56%</td></tr>
+<tr><td>일반</td><td>노랑쥐돔</td><td>산호초</td><td>12.56%</td></tr>
+<tr><td>일반</td><td>나비고기</td><td>산호초</td><td>12.56%</td></tr>
+<tr><td>고급</td><td>꼬리점놀래기</td><td>산호초</td><td>10.05%</td></tr>
+<tr><td>고급</td><td>흑백자리돔</td><td>산호초</td><td>10.05%</td></tr>
+<tr><td>고급</td><td>보석자리돔</td><td>산호초</td><td>10.05%</td></tr>
+<tr><td>희귀</td><td>파랑머리놀래기</td><td>산호초</td><td>15.08%</td></tr>
+<tr><td>영웅</td><td>와이오밍흰동가리</td><td>산호초</td><td>4.52%</td></tr>
+</table></div>
+</details>
+<details><summary>서식지 아이템 「산호 계곡」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>일반</td><td>발렌티니복어</td><td>산호 계곡</td><td>16.75%</td></tr>
+<tr><td>일반</td><td>불꽃망둑</td><td>산호 계곡</td><td>16.75%</td></tr>
+<tr><td>일반</td><td>딸기도티백</td><td>산호 계곡</td><td>16.75%</td></tr>
+<tr><td>고급</td><td>왕관도티백</td><td>산호 계곡</td><td>15.08%</td></tr>
+<tr><td>고급</td><td>외뿔쥐돔</td><td>산호 계곡</td><td>15.08%</td></tr>
+<tr><td>희귀</td><td>방가이동갈돔</td><td>산호 계곡</td><td>5.03%</td></tr>
+<tr><td>희귀</td><td>사마귀씬벵이</td><td>산호 계곡</td><td>5.03%</td></tr>
+<tr><td>희귀</td><td>광대쥐돔</td><td>산호 계곡</td><td>5.03%</td></tr>
+<tr><td>영웅</td><td>삼각나비고기</td><td>산호 계곡</td><td>4.52%</td></tr>
+</table></div>
+</details>
+<details><summary>서식지 아이템 「산호 정원」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>일반</td><td>너구리나비고기</td><td>산호 정원</td><td>52.63%</td></tr>
+<tr><td>고급</td><td>점박이나비고기</td><td>산호 정원</td><td>7.89%</td></tr>
+<tr><td>고급</td><td>긴코나비고기</td><td>산호 정원</td><td>7.89%</td></tr>
+<tr><td>고급</td><td>여우독가시치</td><td>산호 정원</td><td>7.89%</td></tr>
+<tr><td>고급</td><td>황제천사돔</td><td>산호 정원</td><td>7.89%</td></tr>
+<tr><td>희귀</td><td>여덟줄나비고기</td><td>산호 정원</td><td>3.95%</td></tr>
+<tr><td>희귀</td><td>안장나비고기</td><td>산호 정원</td><td>3.95%</td></tr>
+<tr><td>희귀</td><td>무지개비늘돔</td><td>산호 정원</td><td>3.95%</td></tr>
+<tr><td>희귀</td><td>초승달천사돔</td><td>산호 정원</td><td>3.95%</td></tr>
+</table></div>
+</details>
+<details><summary>서식지 아이템 「갯벌」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>일반</td><td>두빛베도라치</td><td>갯벌</td><td>25.13%</td></tr>
+<tr><td>일반</td><td>휠러새우망둑</td><td>갯벌</td><td>25.13%</td></tr>
+<tr><td>고급</td><td>노랑파수꾼망둑</td><td>갯벌</td><td>10.05%</td></tr>
+<tr><td>고급</td><td>성대</td><td>갯벌</td><td>10.05%</td></tr>
+<tr><td>고급</td><td>뿔복</td><td>갯벌</td><td>10.05%</td></tr>
+<tr><td>희귀</td><td>민무늬거북복</td><td>갯벌</td><td>7.54%</td></tr>
+<tr><td>희귀</td><td>랜달망둑</td><td>갯벌</td><td>7.54%</td></tr>
+<tr><td>영웅</td><td>장미망둑</td><td>갯벌</td><td>4.52%</td></tr>
+</table></div>
+</details>
+<details><summary>서식지 아이템 「해초 숲」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>일반</td><td>초록자리돔</td><td>해초 숲</td><td>90.91%</td></tr>
+<tr><td>영웅</td><td>붉은해초해룡</td><td>해초 숲</td><td>4.09%</td></tr>
+<tr><td>영웅</td><td>마린베타</td><td>해초 숲</td><td>4.09%</td></tr>
+<tr><td>전설</td><td>나뭇잎해룡</td><td>해초 숲</td><td>0.91%</td></tr>
+</table></div>
+</details>
+<details><summary>서식지 아이템 「얕은 바다」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>일반</td><td>흑금자리돔</td><td>얕은 바다</td><td>19.72%</td></tr>
+<tr><td>일반</td><td>노랑거북복</td><td>얕은 바다</td><td>19.72%</td></tr>
+<tr><td>일반</td><td>고등어</td><td>얕은 바다</td><td>19.72%</td></tr>
+<tr><td>고급</td><td>안장흰동가리</td><td>얕은 바다</td><td>17.75%</td></tr>
+<tr><td>고급</td><td>파란줄망둑</td><td>얕은 바다</td><td>17.75%</td></tr>
+<tr><td>영웅</td><td>혹부리비늘돔</td><td>얕은 바다</td><td>5.33%</td></tr>
+</table></div>
+</details>
+<details><summary>서식지 아이템 「중간 바다」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>고급</td><td>가다랑어</td><td>중간 바다</td><td>60.00%</td></tr>
+<tr><td>희귀</td><td>꼬치삼치</td><td>중간 바다</td><td>30.00%</td></tr>
+<tr><td>영웅</td><td>실전갱이</td><td>중간 바다</td><td>9.00%</td></tr>
+<tr><td>전설</td><td>개복치</td><td>중간 바다</td><td>0.50%</td></tr>
+<tr><td>전설</td><td>쥐가오리</td><td>중간 바다</td><td>0.50%</td></tr>
+</table></div>
+</details>
+<details><summary>서식지 아이템 「깊은 바다」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>희귀</td><td>노을도티백</td><td>깊은 바다</td><td>25.00%</td></tr>
+<tr><td>희귀</td><td>폭죽망둑</td><td>깊은 바다</td><td>25.00%</td></tr>
+<tr><td>희귀</td><td>파랑머리옥돔</td><td>깊은 바다</td><td>25.00%</td></tr>
+<tr><td>영웅</td><td>황금도티백</td><td>깊은 바다</td><td>7.50%</td></tr>
+<tr><td>영웅</td><td>자바리</td><td>깊은 바다</td><td>7.50%</td></tr>
+<tr><td>영웅</td><td>복면천사돔</td><td>깊은 바다</td><td>7.50%</td></tr>
+<tr><td>전설</td><td>페퍼민트천사돔</td><td>깊은 바다</td><td>2.50%</td></tr>
+</table></div>
+</details>
+<details><summary>서식지 아이템 「심해」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>영웅</td><td>도끼고기</td><td>심해</td><td>45.00%</td></tr>
+<tr><td>영웅</td><td>물개복치</td><td>심해</td><td>45.00%</td></tr>
+<tr><td>전설</td><td>앵무조개</td><td>심해</td><td>10.00%</td></tr>
+</table></div>
+</details>
+<details><summary>속성 아이템 「땅」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>일반</td><td>불꽃망둑</td><td>산호 계곡</td><td>16.75%</td></tr>
+<tr><td>일반</td><td>딸기도티백</td><td>산호 계곡</td><td>16.75%</td></tr>
+<tr><td>일반</td><td>두빛베도라치</td><td>갯벌</td><td>8.38%</td></tr>
+<tr><td>일반</td><td>휠러새우망둑</td><td>갯벌</td><td>8.38%</td></tr>
+<tr><td>고급</td><td>보석자리돔</td><td>산호초</td><td>12.92%</td></tr>
+<tr><td>고급</td><td>왕관도티백</td><td>산호 계곡</td><td>8.61%</td></tr>
+<tr><td>고급</td><td>노랑파수꾼망둑</td><td>갯벌</td><td>4.31%</td></tr>
+<tr><td>고급</td><td>성대</td><td>갯벌</td><td>4.31%</td></tr>
+<tr><td>희귀</td><td>사마귀씬벵이</td><td>산호 계곡</td><td>6.03%</td></tr>
+<tr><td>희귀</td><td>무지개비늘돔</td><td>산호 정원</td><td>6.03%</td></tr>
+<tr><td>희귀</td><td>랜달망둑</td><td>갯벌</td><td>3.02%</td></tr>
+<tr><td>영웅</td><td>장미망둑</td><td>갯벌</td><td>4.52%</td></tr>
+</table></div>
+</details>
+<details><summary>속성 아이템 「물」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>일반</td><td>흰동가리</td><td>산호초</td><td>12.50%</td></tr>
+<tr><td>일반</td><td>나비고기</td><td>산호초</td><td>12.50%</td></tr>
+<tr><td>일반</td><td>발렌티니복어</td><td>산호 계곡</td><td>8.33%</td></tr>
+<tr><td>일반</td><td>너구리나비고기</td><td>산호 정원</td><td>8.33%</td></tr>
+<tr><td>일반</td><td>초록자리돔</td><td>해초 숲</td><td>8.33%</td></tr>
+<tr><td>고급</td><td>흑백자리돔</td><td>산호초</td><td>11.25%</td></tr>
+<tr><td>고급</td><td>점박이나비고기</td><td>산호 정원</td><td>7.50%</td></tr>
+<tr><td>고급</td><td>긴코나비고기</td><td>산호 정원</td><td>7.50%</td></tr>
+<tr><td>고급</td><td>뿔복</td><td>갯벌</td><td>3.75%</td></tr>
+<tr><td>희귀</td><td>방가이동갈돔</td><td>산호 계곡</td><td>3.33%</td></tr>
+<tr><td>희귀</td><td>여덟줄나비고기</td><td>산호 정원</td><td>3.33%</td></tr>
+<tr><td>희귀</td><td>안장나비고기</td><td>산호 정원</td><td>3.33%</td></tr>
+<tr><td>희귀</td><td>초승달천사돔</td><td>산호 정원</td><td>3.33%</td></tr>
+<tr><td>희귀</td><td>민무늬거북복</td><td>갯벌</td><td>1.67%</td></tr>
+<tr><td>영웅</td><td>와이오밍흰동가리</td><td>산호초</td><td>1.50%</td></tr>
+<tr><td>영웅</td><td>삼각나비고기</td><td>산호 계곡</td><td>1.00%</td></tr>
+<tr><td>영웅</td><td>붉은해초해룡</td><td>해초 숲</td><td>1.00%</td></tr>
+<tr><td>영웅</td><td>마린베타</td><td>해초 숲</td><td>1.00%</td></tr>
+<tr><td>전설</td><td>나뭇잎해룡</td><td>해초 숲</td><td>0.50%</td></tr>
+</table></div>
+</details>
+<details><summary>속성 아이템 「바람」 적중</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>일반</td><td>블루탱</td><td>산호초</td><td>26.32%</td></tr>
+<tr><td>일반</td><td>노랑쥐돔</td><td>산호초</td><td>26.32%</td></tr>
+<tr><td>고급</td><td>꼬리점놀래기</td><td>산호초</td><td>10.53%</td></tr>
+<tr><td>고급</td><td>외뿔쥐돔</td><td>산호 계곡</td><td>7.02%</td></tr>
+<tr><td>고급</td><td>여우독가시치</td><td>산호 정원</td><td>7.02%</td></tr>
+<tr><td>고급</td><td>황제천사돔</td><td>산호 정원</td><td>7.02%</td></tr>
+<tr><td>희귀</td><td>파랑머리놀래기</td><td>산호초</td><td>9.47%</td></tr>
+<tr><td>희귀</td><td>광대쥐돔</td><td>산호 계곡</td><td>6.32%</td></tr>
+</table></div>
+</details>
+<details><summary>특별 아이템 「달물결」 적중 (혼자만 놓을 수 있음, 기간과 상관없이 달물결 물고기 8종)</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>영웅</td><td>늑대고기</td><td>달물결</td><td>22.50%</td></tr>
+<tr><td>영웅</td><td>룩다운피쉬</td><td>달물결</td><td>22.50%</td></tr>
+<tr><td>영웅</td><td>손전등물고기</td><td>달물결</td><td>22.50%</td></tr>
+<tr><td>영웅</td><td>붕장어</td><td>달물결</td><td>22.50%</td></tr>
+<tr><td>전설</td><td>붉평치</td><td>달물결</td><td>2.50%</td></tr>
+<tr><td>전설</td><td>산갈치</td><td>달물결</td><td>2.50%</td></tr>
+<tr><td>전설</td><td>철갑둥어</td><td>달물결</td><td>2.50%</td></tr>
+<tr><td>전설</td><td>돗돔</td><td>달물결</td><td>2.50%</td></tr>
+</table></div>
+</details>
+<details><summary>특별 아이템 「우정」 적중 (혼자만 놓을 수 있음, 소셜 레벨로 열린 우정 물고기 1종)</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>고급</td><td>가시복</td><td>우정 포인트</td><td>100.00%</td></tr>
+</table></div>
+</details>
+<details><summary>특별 아이템 「우정」 적중 (혼자만 놓을 수 있음, 소셜 레벨로 열린 우정 물고기 2종)</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>고급</td><td>가시복</td><td>우정 포인트</td><td>66.67%</td></tr>
+<tr><td>희귀</td><td>주황해마</td><td>우정 포인트</td><td>33.33%</td></tr>
+</table></div>
+</details>
+<details><summary>특별 아이템 「우정」 적중 (혼자만 놓을 수 있음, 소셜 레벨로 열린 우정 물고기 3종)</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>고급</td><td>가시복</td><td>우정 포인트</td><td>60.61%</td></tr>
+<tr><td>희귀</td><td>주황해마</td><td>우정 포인트</td><td>30.30%</td></tr>
+<tr><td>영웅</td><td>우무문어</td><td>우정 포인트</td><td>9.09%</td></tr>
+</table></div>
+</details>
+<details><summary>특별 아이템 「우정」 적중 (혼자만 놓을 수 있음, 소셜 레벨로 열린 우정 물고기 4종)</summary>
+<div class="table-scroll"><table>
+<tr><th>등급</th><th>물고기</th><th>서식지</th><th>확률</th></tr>
+<tr><td>고급</td><td>가시복</td><td>우정 포인트</td><td>60.00%</td></tr>
+<tr><td>희귀</td><td>주황해마</td><td>우정 포인트</td><td>30.00%</td></tr>
+<tr><td>영웅</td><td>우무문어</td><td>우정 포인트</td><td>9.00%</td></tr>
+<tr><td>전설</td><td>푸른바다거북</td><td>우정 포인트</td><td>1.00%</td></tr>
+</table></div>
+</details>
+<p>우정 물고기는 소셜 레벨 1·15·25·40에 차례로 열립니다. 특별 아이템이 빗나가면 조합 아이템 없이 놓은 알과 같습니다.</p>
+<h2 id="forge">4. 대장간 (진주 → 조합 아이템)</h2>
+<p><strong>얻는 방법</strong>: 진주 1개로 조합 아이템 1개를 만듭니다. 진주는 대장간에서 50다이아에 살 수 있고,
+일일 상점(다이아·골드), 진주 조각 150개, 물고기 골드 수확·돌림판·퀘스트·친구 선물 등으로도 얻습니다.</p>
+<ul>
+  <li>먼저 아이템 확률 등급을 뽑습니다: <strong>10% 아이템 75%</strong>, <strong>20% 아이템 25%</strong>.</li>
+  <li>그다음 아래 목록에서 균등하게 하나를 뽑습니다: 등급 아이템(일반·고급·희귀), 서식지 아이템(도감으로 열린 산호초·산호 계곡·산호 정원·갯벌·해초 숲), 속성 아이템(땅·물·바람).</li>
+</ul>
+<div class="table-scroll"><table>
+<tr><th>도감 점수</th><th>목록의 아이템 수</th><th>아이템 1종당 (10% 아이템)</th><th>아이템 1종당 (20% 아이템)</th></tr>
+<tr><td>250점 미만</td><td>7</td><td>10.71%</td><td>3.57%</td></tr>
+<tr><td>250~449점</td><td>8</td><td>9.38%</td><td>3.13%</td></tr>
+<tr><td>450~699점</td><td>9</td><td>8.33%</td><td>2.78%</td></tr>
+<tr><td>700~1,499점</td><td>10</td><td>7.50%</td><td>2.50%</td></tr>
+<tr><td>1,500점 이상</td><td>11</td><td>6.82%</td><td>2.27%</td></tr>
+</table></div>
+
+<h2 id="golden">5. 황금 물고기</h2>
+<ul>
+  <li>알을 놓을 때(다이아로 낳는 알 포함) <strong>1%</strong> 확률로 황금 물고기가 됩니다. 계정의 첫 5개 알은 제외됩니다.</li>
+  <li>낚시로 낚은 물고기는 미끼와 상관없이 <strong>1%</strong> 확률로 황금 물고기입니다.</li>
+  <li>황금 물고기는 색과 도감 표시만 다르며 능력치는 같습니다.</li>
+</ul>
+
+<h2 id="gift">6. 친구 선물</h2>
+<p><strong>얻는 방법</strong>: 하루 5번은 무료로 보낼 수 있고, 그 뒤로는 1번에 10다이아입니다. 받는 사람이 열 때 내용물이 정해집니다.</p>
+<div class="table-scroll"><table>
+<tr><th>내용물</th><th>확률</th></tr>
+<tr><td>다이아 10개</td><td>10.00%</td></tr>
+<tr><td>골드 (마지막으로 걷은 안개 비용의 10~20%, 10 단위, 최소 10)</td><td>25.00%</td></tr>
+<tr><td>진주 1개</td><td>25.00%</td></tr>
+<tr><td>10% 우정 조합 아이템</td><td>10.00%</td></tr>
+<tr><td>목재 1개</td><td>10.00%</td></tr>
+<tr><td>석재 1개</td><td>10.00%</td></tr>
+<tr><td>마법의 가루 1개</td><td>10.00%</td></tr>
+</table></div>
+
+<h2 id="wheel">7. 행운의 돌림판 (무료, 참고)</h2>
+<p>돌림판은 12시간(UTC)마다 무료 1회와 광고 시청으로만 돌릴 수 있고 다이아로는 돌릴 수 없습니다. 참고로 공개합니다.</p>
+<ul>
+  <li>칸 8개(다이아 10, 골드 500, 골드 200, 골드 200, 골드 300, 골드 200, 진주 1, 다이아 50)는 12시간마다 칸마다 한 번씩만 나옵니다.</li>
+  <li>남은 칸 중에서 균등하게 뽑습니다(첫 회전은 칸마다 12.50%).</li>
+</ul>
+
+<h2>문의</h2>
+<p>
+  개발자: Hesam Studio (해삼 스튜디오)<br>
+  이메일: <a href="mailto:hesam950929@gmail.com">hesam950929@gmail.com</a>
+</p>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Hesam Studio</div>
+</footer>
+
+</body>
+</html>
