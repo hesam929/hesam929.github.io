@@ -71,10 +71,10 @@
 
 <h1>개인정보처리방침</h1>
 <p class="meta">
-  앱 이름: Hatching Aquarium: Merge Fish<br>
+  앱 이름: Hatching Aquarium: Merge Fish (물고기 키우기)<br>
   패키지 이름: com.studiohesam.hatchingaquarium<br>
   개발자: Hesam Studio (해삼 스튜디오)<br>
-  시행일: 2026년 8월 10일 · 최종 수정일: 2026년 8월 17일
+  시행일: 2026년 8월 10일 · 최종 수정일: 2026년 10월 9일
 </p>
 
 <p>Hesam Studio(이하 "개발자")는 이용자의 개인정보를 중요하게 생각하며,
@@ -84,59 +84,86 @@
 
 <h2>1. 수집하는 정보</h2>
 
-<p>본 앱은 <strong>이름, 이메일, 전화번호, 주소 등 이용자를 직접 식별할 수 있는
-정보를 수집하지 않습니다.</strong> 회원가입 절차가 없으며, 이용자가 직접 정보를
-입력하는 화면도 없습니다.</p>
-
-<p>본 앱은 게임 기능 제공을 위해 다음 정보를 자동으로 수집·이용합니다.</p>
+<p>본 앱은 별도의 회원가입 없이 게스트로 시작할 수 있습니다. 이름, 전화번호, 주소는
+수집하지 않습니다. 이용자가 <strong>구글 또는 애플 계정을 연결하는 경우</strong>에 한해
+그 계정의 이메일 주소를 받습니다.</p>
 
 <div class="table-scroll">
 <table>
-  <tr><th>항목</th><th>내용</th><th>이용 목적</th></tr>
+  <tr><th>항목</th><th>내용</th><th>수집 방법</th><th>이용 목적</th></tr>
   <tr>
     <td>계정 식별자</td>
-    <td>Firebase 익명 인증이 발급하는 사용자 ID(uid), 게임 내 플레이어 ID(예: ABC-DEF-GHI), 최초·최근 접속 시각</td>
+    <td>Firebase 인증이 발급하는 사용자 ID(uid), 게임 내 플레이어 ID(예: ABC-DEF-GHI), 최초·최근 접속 시각</td>
+    <td>자동</td>
     <td>게임 계정 식별, 진행 데이터 연결, 로그인 유지</td>
   </tr>
   <tr>
+    <td>이메일 주소</td>
+    <td>구글·애플 계정을 연결한 경우 그 계정의 이메일(애플의 "나의 이메일 가리기"를 쓰면 애플이 만든 중계 주소)</td>
+    <td>계정 연결 시(선택)</td>
+    <td>계정 연결·복구, 이용자 문의와 업데이트 제안서 처리 시 본인 확인</td>
+  </tr>
+  <tr>
     <td>게임 진행 데이터</td>
-    <td>보유 재화, 물고기, 도감, 출석·우편 기록 등</td>
+    <td>보유 재화, 물고기, 도감, 퀘스트, 출석·우편 기록 등</td>
+    <td>자동</td>
     <td>게임 저장·복원, 기기 변경 시 이어하기, 운영 우편 지급</td>
   </tr>
   <tr>
-    <td>기기 정보</td>
-    <td>기기 모델명, 운영체제 버전</td>
+    <td>이용자가 입력한 정보</td>
+    <td>닉네임, 업데이트 제안서에 적은 내용(원하는 물고기 이름)</td>
+    <td>이용자 입력(선택)</td>
+    <td>친구에게 이름 표시, 다음 업데이트 검토</td>
+  </tr>
+  <tr>
+    <td>친구 기능 정보</td>
+    <td>친구 목록, 친구 신청·선물 기록, 공개 프로필(닉네임, 플레이어 ID, 도감 점수)</td>
+    <td>친구 기능 이용 시</td>
+    <td>친구 맺기, 선물 주고받기, 친구 목록에 이름·점수 표시</td>
+  </tr>
+  <tr>
+    <td>기기·진단 정보</td>
+    <td>기기 모델명, 운영체제 버전, 그래픽 장치·화면 정보, 앱 버전, 튜토리얼·결제 초기화 상태</td>
+    <td>자동</td>
     <td>오류 원인 파악, 기기별 호환성 대응</td>
   </tr>
   <tr>
     <td>광고 식별자</td>
-    <td>Google 광고 ID(ADID)</td>
-    <td>보상형 광고 제공, 광고 부정행위 방지, (동의 시) 맞춤 광고</td>
+    <td>Google 광고 ID(ADID), iOS 광고 식별자(IDFA, 추적을 허용한 경우)</td>
+    <td>자동(광고 SDK)</td>
+    <td>광고 제공, 광고 부정행위 방지, (동의 시) 맞춤 광고</td>
   </tr>
   <tr>
     <td>IP 주소</td>
     <td>서버·광고 서비스 접속 과정에서 각 서비스가 처리</td>
-    <td>부정 이용 방지, 서비스 운영</td>
+    <td>자동</td>
+    <td>부정 이용 방지, 서비스 운영, 대략적인 지역에 맞춘 광고</td>
   </tr>
   <tr>
     <td>구매 기록</td>
-    <td>인앱 상품 구매 내역(Google Play가 결제 처리)</td>
-    <td>구매 상품 지급, 구매 복원</td>
+    <td>인앱 상품 구매 내역(결제는 Google Play·App Store가 처리)</td>
+    <td>자동</td>
+    <td>구매 상품 지급, 구매 내역 확인</td>
+  </tr>
+  <tr>
+    <td>푸시 알림 토큰</td>
+    <td>Firebase Cloud Messaging이 발급하는 기기 토큰</td>
+    <td>알림을 허용한 경우</td>
+    <td>게임 알림(알 부화 완료, 먹이 수확 준비 등) 발송</td>
   </tr>
 </table>
 </div>
 
-<p><strong>비밀번호는 존재하지 않으며, 결제 수단 정보(카드번호 등)는 Google Play가
+<p><strong>비밀번호는 존재하지 않으며, 결제 수단 정보(카드번호 등)는 Google Play·App Store가
 처리하고 개발자는 접근할 수 없습니다.</strong></p>
 
 <h2>2. 정보의 저장 위치</h2>
 
 <p>게임 진행 데이터는 이용자의 기기에 저장되며, 계정 연결과 기기 변경 시
 이어하기를 위해 <strong>Google Firebase 서버(Cloud Firestore)에도 저장</strong>됩니다.
-서버에는 계정 식별자(uid), 플레이어 ID, 게임 진행 데이터, 운영 우편이 보관됩니다.</p>
-
-<p>앱을 삭제하면 기기의 데이터는 삭제됩니다. 서버에 저장된 데이터의 삭제는
-아래 문의처로 플레이어 ID와 함께 요청하시면 지체 없이 처리합니다.</p>
+서버에는 위 표의 계정 식별자, 이메일(계정을 연결한 경우), 게임 진행 데이터, 친구 기능 정보,
+진단 정보, 업데이트 제안서, 운영 우편이 보관됩니다. 개발자는 이 정보를 판매하거나
+광고 목적으로 제3자에게 제공하지 않습니다.</p>
 
 <h2>3. 제3자 서비스</h2>
 
@@ -147,91 +174,96 @@
 <table>
   <tr><th>서비스</th><th>제공자</th><th>용도</th><th>전달될 수 있는 정보</th><th>방침</th></tr>
   <tr>
-    <td>Firebase Authentication / Cloud Firestore</td>
+    <td>Firebase Authentication / Cloud Firestore / Cloud Messaging</td>
     <td>Google LLC</td>
-    <td>익명 로그인, 클라우드 저장, 우편함</td>
-    <td>계정 식별자, 게임 진행 데이터, IP 주소</td>
+    <td>로그인, 클라우드 저장, 친구·우편, 푸시 알림</td>
+    <td>계정 식별자, 이메일(계정 연결 시), 게임 진행 데이터, 진단 정보, 푸시 토큰, IP 주소</td>
     <td><a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></td>
   </tr>
   <tr>
-    <td>AppLovin MAX (광고 미디에이션)</td>
-    <td>AppLovin Corp.</td>
-    <td>보상형 광고 제공·중개</td>
-    <td>광고 ID, 기기 정보, IP 주소, 광고 상호작용</td>
-    <td><a href="https://legal.applovin.com/privacy/">legal.applovin.com/privacy</a></td>
+    <td>Google 로그인</td>
+    <td>Google LLC</td>
+    <td>구글 계정 연결(선택)</td>
+    <td>이메일, 계정 식별자</td>
+    <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td>
+  </tr>
+  <tr>
+    <td>Apple로 로그인</td>
+    <td>Apple Inc.</td>
+    <td>애플 계정 연결(선택, iOS)</td>
+    <td>이메일(또는 중계 주소), 계정 식별자</td>
+    <td><a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></td>
   </tr>
   <tr>
     <td>Google AdMob</td>
     <td>Google LLC</td>
-    <td>광고 네트워크(미디에이션 내)</td>
-    <td>광고 ID, 기기 정보, IP 주소</td>
+    <td>보상형 광고·배너 광고 제공</td>
+    <td>광고 ID, 기기 정보, IP 주소, 광고 상호작용</td>
     <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td>
   </tr>
   <tr>
-    <td>Moloco Ads</td>
-    <td>Moloco, Inc.</td>
-    <td>광고 네트워크(미디에이션 내)</td>
-    <td>광고 ID, 기기 정보, IP 주소</td>
-    <td><a href="https://www.moloco.com/privacy-policy">moloco.com/privacy-policy</a></td>
-  </tr>
-  <tr>
-    <td>Unity Ads</td>
-    <td>Unity Technologies</td>
-    <td>광고 네트워크(미디에이션 내)</td>
-    <td>광고 ID, 기기 정보, IP 주소</td>
-    <td><a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">unity.com/legal/…privacy-policy</a></td>
-  </tr>
-  <tr>
-    <td>Google Play 결제</td>
-    <td>Google LLC</td>
+    <td>Google Play 결제 / App Store 결제</td>
+    <td>Google LLC / Apple Inc.</td>
     <td>인앱 구매 결제 처리</td>
     <td>구매 내역(결제 수단 정보는 개발자에게 전달되지 않음)</td>
-    <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td>
+    <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a> ·
+        <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></td>
   </tr>
-  <!-- MMP(설치 어트리뷰션) 도구 도입 시 이 표에 행을 추가할 것 (Airbridge 또는 Tenjin) -->
+  <!-- 광고 미디에이션(AppLovin MAX 등)이나 MMP(Airbridge 등)를 실제로 켜는 날 이 표에 행을 추가할 것 -->
 </table>
 </div>
 
 <h2>4. 광고에 관하여</h2>
 
 <ul>
-  <li>본 앱의 광고는 이용자가 보상을 받기 위해 <strong>직접 선택해서 시청하는
-      보상형 광고</strong>입니다.</li>
+  <li>본 앱에는 화면 위쪽의 <strong>배너 광고</strong>와, 이용자가 보상을 받기 위해
+      <strong>직접 선택해서 시청하는 보상형 광고</strong>가 있습니다.</li>
   <li>광고 제공 과정에서 광고 사업자가 광고 ID 등 기기 정보를 수집할 수 있습니다.</li>
-  <li>기기 설정(Android: 설정 ▸ 개인정보 보호 ▸ 광고)에서 광고 ID를 재설정하거나
-      맞춤 광고를 제한할 수 있습니다.</li>
-  <li>광고 제거 상품을 구매하면 모든 광고 시청이 생략됩니다.</li>
+  <li>기기 설정(Android: 설정 ▸ 개인정보 보호 ▸ 광고, iOS: 설정 ▸ 개인정보 보호 및 보안 ▸ 추적)에서
+      광고 ID를 재설정하거나 맞춤 광고·추적을 제한할 수 있습니다.</li>
+  <li>광고 제거 상품을 구매하면 배너 광고가 사라지고 보상형 광고 시청이 생략됩니다.</li>
 </ul>
 
 <h2>5. 보유 및 이용 기간</h2>
 
-<p>기기에 저장된 정보는 앱 삭제 시까지, 서버에 저장된 정보는 삭제 요청 시까지
-보관됩니다. 제3자 서비스가 처리하는 정보의 보유 기간은 각 서비스의
-개인정보처리방침을 따릅니다.</p>
+<p>기기에 저장된 정보는 앱 삭제 시까지, 서버에 저장된 정보는 계정 삭제 시까지
+보관됩니다. 업데이트 제안서는 검토가 끝나면 삭제하며, 계정을 삭제하면 함께 삭제합니다.
+제3자 서비스가 처리하는 정보의 보유 기간은 각 서비스의 개인정보처리방침을 따릅니다.</p>
 
-<h2>6. 이용자의 권리</h2>
+<h2 id="delete">6. 계정 및 데이터 삭제</h2>
 
 <ul>
-  <li><strong>기기 데이터 삭제</strong>: 앱을 삭제하거나 게임 내 설정에서 데이터를
-      초기화할 수 있습니다.</li>
-  <li><strong>서버 데이터 삭제</strong>: 문의처로 플레이어 ID(설정 ▸ 계정에서 확인)와
-      함께 요청하시면 서버의 계정·진행 데이터를 삭제합니다.</li>
-  <li><strong>열람·정정·처리정지</strong>: 아래 연락처로 요청하실 수 있습니다.</li>
+  <li><strong>앱에서 삭제</strong>: 게임 내 <strong>설정 ▸ 계정 ▸ 계정 삭제</strong>에서 요청할 수 있습니다.
+      요청 후 <strong>7일의 유예 기간</strong>이 지나면 서버의 계정, 이메일, 게임 진행 데이터,
+      친구 기능 정보, 진단 정보, 업데이트 제안서가 삭제됩니다. 유예 기간 안에는 같은 화면에서
+      삭제를 취소할 수 있습니다.</li>
+  <li><strong>앱 없이 삭제 요청</strong>: 아래 문의처로 플레이어 ID(설정 ▸ 계정에서 확인)를 적어
+      보내 주시면 같은 범위의 데이터를 삭제합니다.</li>
+  <li><strong>기기 데이터</strong>: 앱을 삭제하면 기기에 저장된 데이터가 삭제됩니다.</li>
+  <li>Google Play·App Store가 보관하는 결제 내역은 각 회사의 정책에 따라 보관됩니다.</li>
 </ul>
 
-<h2>7. 아동의 개인정보</h2>
+<h2>7. 이용자의 권리</h2>
+
+<ul>
+  <li><strong>열람·정정·삭제·처리정지</strong>: 아래 연락처로 요청하실 수 있으며, 지체 없이 처리합니다.</li>
+  <li><strong>계정 연결</strong>: 구글·애플 계정을 연결하지 않고 게스트로 계속 이용할 수 있습니다.</li>
+  <li><strong>알림 끄기</strong>: 기기 설정 또는 게임 내 설정에서 푸시 알림을 끌 수 있습니다.</li>
+</ul>
+
+<h2>8. 아동의 개인정보</h2>
 
 <p>본 앱은 만 14세 미만 아동을 주 대상으로 하지 않습니다.
 만 14세 미만 아동의 정보가 보호자 동의 없이 수집된 사실을 알게 될 경우
 지체 없이 해당 정보를 삭제합니다.</p>
 
-<h2>8. 방침의 변경</h2>
+<h2>9. 방침의 변경</h2>
 
 <p>법령이나 서비스 내용이 바뀌어 본 방침을 수정할 경우, 변경된 내용을
 본 페이지에 게시하고 최종 수정일을 갱신합니다. 중요한 변경이 있을 때에는
 앱 내에서 별도로 안내합니다.</p>
 
-<h2>9. 문의처</h2>
+<h2>10. 문의처</h2>
 
 <p>
   개발자: Hesam Studio (해삼 스튜디오)<br>
@@ -244,112 +276,151 @@
 <p class="meta">
   App: Hatching Aquarium: Merge Fish (com.studiohesam.hatchingaquarium)<br>
   Developer: Hesam Studio<br>
-  Effective: 10 August 2026 · Last updated: 17 August 2026
+  Effective: 10 August 2026 · Last updated: 9 October 2026
 </p>
 
 <h2>1. Information we collect</h2>
 
-<p>This app does <strong>not collect information that directly identifies you</strong> —
-no name, email address, phone number, or postal address. There is no sign-up form and
-no screen where you type personal details.</p>
-
-<p>The app automatically collects the following in order to run the game:</p>
+<p>You can start playing as a guest without signing up. We do not collect your name, phone
+number, or postal address. <strong>Only if you link a Google or Apple account</strong> do we
+receive that account's email address.</p>
 
 <div class="table-scroll">
 <table>
-  <tr><th>Data</th><th>Details</th><th>Purpose</th></tr>
+  <tr><th>Data</th><th>Details</th><th>How</th><th>Purpose</th></tr>
   <tr><td>Account identifiers</td>
-      <td>The anonymous user ID (uid) issued by Firebase Authentication, the in-game
-          player ID (e.g. ABC-DEF-GHI), first and most recent sign-in times</td>
+      <td>The user ID (uid) issued by Firebase Authentication, the in-game player ID
+          (e.g. ABC-DEF-GHI), first and most recent sign-in times</td>
+      <td>Automatic</td>
       <td>Identifying your account, linking progress, staying signed in</td></tr>
-  <tr><td>Game progress</td><td>Currency, fish, collection, attendance and mail records</td>
+  <tr><td>Email address</td>
+      <td>The email of a linked Google or Apple account (with Apple's "Hide My Email", the
+          relay address Apple creates)</td>
+      <td>When you link an account (optional)</td>
+      <td>Account linking and recovery, verifying you when we handle support requests and
+          update suggestion notes</td></tr>
+  <tr><td>Game progress</td><td>Currency, fish, collection, quests, attendance and mail records</td>
+      <td>Automatic</td>
       <td>Saving and restoring your game, continuing on a new device, operator mail</td></tr>
-  <tr><td>Device information</td><td>Device model, operating system version</td>
+  <tr><td>Information you enter</td>
+      <td>Your nickname, and what you write in an update suggestion note (the fish you would like to see)</td>
+      <td>You enter it (optional)</td>
+      <td>Showing your name to friends, reviewing future updates</td></tr>
+  <tr><td>Friends features</td>
+      <td>Friend list, friend requests and gifts, public profile (nickname, player ID, Dex score)</td>
+      <td>When you use friends features</td>
+      <td>Adding friends, sending gifts, showing names and scores in friend lists</td></tr>
+  <tr><td>Device and diagnostics</td>
+      <td>Device model, OS version, graphics and screen information, app version,
+          tutorial and billing start-up status</td>
+      <td>Automatic</td>
       <td>Diagnosing errors and device compatibility</td></tr>
-  <tr><td>Advertising identifier</td><td>Google Advertising ID (ADID)</td>
-      <td>Serving rewarded ads, ad fraud prevention, personalised ads where consented</td></tr>
+  <tr><td>Advertising identifier</td>
+      <td>Google Advertising ID (ADID), iOS advertising identifier (IDFA, if you allow tracking)</td>
+      <td>Automatic (ad SDK)</td>
+      <td>Serving ads, ad fraud prevention, personalised ads where consented</td></tr>
   <tr><td>IP address</td><td>Processed by server and ad services when you connect</td>
-      <td>Abuse prevention and service operation</td></tr>
-  <tr><td>Purchase history</td><td>In-app purchases (payment handled by Google Play)</td>
-      <td>Delivering and restoring purchased items</td></tr>
+      <td>Automatic</td>
+      <td>Abuse prevention, service operation, region-appropriate ads</td></tr>
+  <tr><td>Purchase history</td>
+      <td>In-app purchases (payment handled by Google Play or the App Store)</td>
+      <td>Automatic</td>
+      <td>Delivering purchased items, purchase history</td></tr>
+  <tr><td>Push notification token</td>
+      <td>A device token issued by Firebase Cloud Messaging</td>
+      <td>If you allow notifications</td>
+      <td>Sending game notifications (e.g. egg ready to hatch, food ready to harvest)</td></tr>
 </table>
 </div>
 
 <p><strong>There are no passwords, and payment details (card numbers, etc.) are handled
-by Google Play — we never see them.</strong></p>
+by Google Play or the App Store — we never see them.</strong></p>
 
 <h2>2. Where data is stored</h2>
 
-<p>Game progress is stored on your device and, to support account linking and playing
-on a new device, <strong>also on Google Firebase servers (Cloud Firestore)</strong> —
-your uid, player ID, game progress and operator mail. Deleting the app removes the
-on-device data; to delete server data, contact us with your player ID.</p>
+<p>Game progress is stored on your device and, to support account linking and playing on a
+new device, <strong>also on Google Firebase servers (Cloud Firestore)</strong>: the account
+identifiers above, your email (if you linked an account), game progress, friends data,
+diagnostics, update suggestion notes and operator mail. We do not sell this information or
+give it to third parties for advertising.</p>
 
 <h2>3. Third-party services</h2>
 
 <div class="table-scroll">
 <table>
   <tr><th>Service</th><th>Provider</th><th>Role</th><th>Data that may be shared</th><th>Policy</th></tr>
-  <tr><td>Firebase Authentication / Cloud Firestore</td><td>Google LLC</td>
-      <td>Anonymous sign-in, cloud save, mailbox</td>
-      <td>Account identifiers, game progress, IP address</td>
+  <tr><td>Firebase Authentication / Cloud Firestore / Cloud Messaging</td><td>Google LLC</td>
+      <td>Sign-in, cloud save, friends and mail, push notifications</td>
+      <td>Account identifiers, email (if linked), game progress, diagnostics, push token, IP address</td>
       <td><a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></td></tr>
-  <tr><td>AppLovin MAX (ad mediation)</td><td>AppLovin Corp.</td>
-      <td>Serving and mediating rewarded ads</td>
+  <tr><td>Google Sign-In</td><td>Google LLC</td><td>Linking a Google account (optional)</td>
+      <td>Email, account identifier</td>
+      <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td></tr>
+  <tr><td>Sign in with Apple</td><td>Apple Inc.</td><td>Linking an Apple account (optional, iOS)</td>
+      <td>Email (or relay address), account identifier</td>
+      <td><a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></td></tr>
+  <tr><td>Google AdMob</td><td>Google LLC</td><td>Rewarded and banner ads</td>
       <td>Advertising ID, device info, IP address, ad interactions</td>
-      <td><a href="https://legal.applovin.com/privacy/">legal.applovin.com/privacy</a></td></tr>
-  <tr><td>Google AdMob</td><td>Google LLC</td><td>Ad network (in mediation)</td>
-      <td>Advertising ID, device info, IP address</td>
       <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td></tr>
-  <tr><td>Moloco Ads</td><td>Moloco, Inc.</td><td>Ad network (in mediation)</td>
-      <td>Advertising ID, device info, IP address</td>
-      <td><a href="https://www.moloco.com/privacy-policy">moloco.com/privacy-policy</a></td></tr>
-  <tr><td>Unity Ads</td><td>Unity Technologies</td><td>Ad network (in mediation)</td>
-      <td>Advertising ID, device info, IP address</td>
-      <td><a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">unity.com/legal/…privacy-policy</a></td></tr>
-  <tr><td>Google Play Billing</td><td>Google LLC</td><td>In-app purchase processing</td>
+  <tr><td>Google Play Billing / App Store</td><td>Google LLC / Apple Inc.</td><td>In-app purchase processing</td>
       <td>Purchase history (payment details never reach us)</td>
-      <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td></tr>
+      <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a> ·
+          <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></td></tr>
 </table>
 </div>
 
 <h2>4. About ads</h2>
 
 <ul>
-  <li>All ads in this app are <strong>rewarded ads you choose to watch</strong>.</li>
+  <li>This app shows a <strong>banner ad</strong> at the top of the screen and
+      <strong>rewarded ads you choose to watch</strong> for in-game rewards.</li>
   <li>Ad providers may collect the advertising ID and device information to serve ads.</li>
-  <li>You can reset your advertising ID or limit ad personalisation in your device
-      settings (Android: Settings ▸ Privacy ▸ Ads).</li>
-  <li>Purchasing the ad-removal product skips all ad viewing.</li>
+  <li>You can reset your advertising ID or limit ad personalisation and tracking in your device
+      settings (Android: Settings ▸ Privacy ▸ Ads; iOS: Settings ▸ Privacy &amp; Security ▸ Tracking).</li>
+  <li>Purchasing the ad-removal product removes the banner and skips rewarded ad viewing.</li>
 </ul>
 
 <h2>5. Retention</h2>
 
-<p>On-device data is kept until you delete the app; server data until you request its
-deletion. Data handled by third-party services is retained according to each service's
-policy.</p>
+<p>On-device data is kept until you delete the app; server data until your account is deleted.
+Update suggestion notes are deleted once reviewed, and together with your account if you delete it.
+Data handled by third-party services is retained according to each service's policy.</p>
 
-<h2>6. Your rights</h2>
+<h2 id="delete-en">6. Deleting your account and data</h2>
 
 <ul>
-  <li><strong>Delete on-device data</strong>: uninstall the app, or reset your data
-      from the in-game settings.</li>
-  <li><strong>Delete server data</strong>: contact us with your player ID
-      (Settings ▸ Account) and we will delete your account and progress data.</li>
-  <li><strong>Access, correction, restriction</strong>: contact us at the address below.</li>
+  <li><strong>In the app</strong>: go to <strong>Settings ▸ Account ▸ Delete account</strong>.
+      After a <strong>7-day grace period</strong> your server account, email, game progress,
+      friends data, diagnostics and update suggestion notes are deleted. During the grace period you can
+      cancel the request on the same screen.</li>
+  <li><strong>Without the app</strong>: email us at the address below with your player ID
+      (Settings ▸ Account) and we will delete the same data.</li>
+  <li><strong>On-device data</strong>: uninstalling the app deletes it.</li>
+  <li>Payment records kept by Google Play or the App Store are retained under their own policies.</li>
 </ul>
 
-<h2>7. Children</h2>
+<h2>7. Your rights</h2>
+
+<ul>
+  <li><strong>Access, correction, deletion, restriction</strong>: contact us at the address below
+      and we will act without delay.</li>
+  <li><strong>Account linking</strong>: you can keep playing as a guest without linking a Google
+      or Apple account.</li>
+  <li><strong>Notifications</strong>: you can turn push notifications off in your device settings
+      or in the game settings.</li>
+</ul>
+
+<h2>8. Children</h2>
 
 <p>This app is not directed to children under 14. If we learn that we have collected
 information from a child under 14 without parental consent, we will delete it promptly.</p>
 
-<h2>8. Changes</h2>
+<h2>9. Changes</h2>
 
 <p>If this policy changes we will post the new version on this page and update the
 "last updated" date. Significant changes will also be announced inside the app.</p>
 
-<h2>9. Contact</h2>
+<h2>10. Contact</h2>
 
 <p>
   Hesam Studio<br>
